@@ -1,0 +1,30 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background-color: #343a40;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.menu-openner {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.menu-openner span {
+    margin-right: 10px;
+    font-weight: bold;
+}

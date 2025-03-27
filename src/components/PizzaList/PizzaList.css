@@ -1,0 +1,27 @@
+.pizza-area {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas em telas grandes */
+    gap: 20px; /* Espaço entre os cards */
+    padding: 20px;
+    padding-top: 100px; /* Garante espaço abaixo do cabeçalho */
+    padding-bottom: 120px; /* Garante espaço acima do rodapé */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    /* Tablets e dispositivos menores */
+    .pizza-area {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+        padding-top: 80px; /* Reduz um pouco o espaço */
+        padding-bottom: 80px; /* Reduz um pouco o espaço */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Smartphones */
+    .pizza-area {
+        grid-template-columns: 1fr; /* 1 coluna */
+        padding-top: 90px; /* Espaço menor para dispositivos pequenos */
+        padding-bottom: 120px; /* Espaço menor para dispositivos pequenos */
+    }
+}

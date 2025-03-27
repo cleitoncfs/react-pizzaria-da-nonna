@@ -1,0 +1,19 @@
+.footer {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 10px 15px; /* Espaço interno ajustado */
+    font-size: 0.9rem;
+    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box; /* Garante que o padding fique dentro do rodapé */
+    z-index: 1000;
+}
+
+.footer span {
+    font-weight: bold;
+    color: #ffcc00;
+}
