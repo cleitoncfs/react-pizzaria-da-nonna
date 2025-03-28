@@ -3,7 +3,10 @@ import Header from "./components/Header/Header";
 import PizzaList from "./components/PizzaList/PizzaList";
 import Modal from "./components/Modal/Modal";
 import Cart from "./components/Cart/Cart";
-import Footer from "./components/Footer/Footer"; // Importando o Footer
+import Footer from "./components/Footer/Footer";
+import WhatsAppButton from "./components/WhatsAppButton/WhatsAppButton";
+import Location from "./components/Location/Location";
+import "./App.css";
 
 export default function App() {
     const [cartItems, setCartItems] = useState([]);
@@ -143,7 +146,12 @@ export default function App() {
     return (
         <div className="App">
             <Header cartItems={cartItems} toggleCart={toggleCart} />
+            <div className="introText">
+                <h2>A melhor pizza da cidade!</h2>
+                <p>Faça já o seu pedido e aproveite o sabor incomparável.</p>
+            </div>
             <PizzaList pizzas={pizzas} onPizzaClick={handlePizzaClick} />
+            <Location /> {/* Componente de localização inserido aqui */}
             {selectedPizza && (
                 <Modal
                     pizza={selectedPizza}
@@ -159,7 +167,8 @@ export default function App() {
                     onCloseCart={handleCloseCart}
                 />
             )}
-            <Footer /> {/* Rodapé adicionado aqui */}
+            <Footer />
+            <WhatsAppButton />
         </div>
     );
 }

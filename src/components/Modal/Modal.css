@@ -3,71 +3,195 @@
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 12;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
+    padding: 10;
+    overflow-y: auto;
 }
 
 .pizzaWindowBody {
-    width: 90%;
-    max-width: 800px;
+    width: 100%;
+    max-width: 400px; /* Configuração padrão para celulares */
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
     display: flex;
-    overflow: hidden;
+    flex-direction: column; /* Layout vertical padrão */
+    max-height: 95vh;
+    overflow-y: auto; /* Ativa rolagem se necessário */
 }
 
-.pizzaBig {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.pizzaBig img {
-    max-width: 100%;
-    object-fit: cover;
-}
-
-.pizzaInfo {
-    flex: 1;
-    padding: 20px;
-}
-
-.pizzaInfo h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.pizzaInfo p {
+.pizzaInfo--addButton {
+    background-color: #28a745; /* Cor verde para destacar o botão */
+    color: #fff; /* Texto branco para contraste */
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
     font-size: 1rem;
-    color: #666;
+    width: 100%;
+    margin: 0 auto;
+    position: relative; /* Mantém o posicionamento ajustado */
+    bottom: 0;
+    transition: background-color 0.3s ease; /* Adiciona animação suave */
 }
 
 .pizzaInfo--sizes {
     display: flex;
-    gap: 10px;
+    gap: 10px; /* Espaçamento entre os botões */
+    flex-wrap: wrap; /* Permite reorganização caso os botões excedam a largura */
+    justify-content: center; /* Centraliza os botões */
 }
 
 .pizzaInfo--size {
     padding: 10px;
     border-radius: 5px;
     font-weight: bold;
-    background-color: #f1f1f1;
+    background-color: rgb(141, 141, 139);
+    color: #000; /* Texto branco */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
 }
 
 .pizzaInfo--size:hover {
-    background-color: #e1e1e1;
+    background-color: rgb(141, 141, 139);
+    color: #000;
+    transform: scale(1.05); /* Leve aumento ao interagir */
 }
 
 .pizzaInfo--size.selected {
-    background-color: #28a745;
+    background-color: gray;
+    color: black;
+}
+
+.pizzaInfo--size.selected:hover {
+    background-color: #218838; /* Cor mais escura ao passar o mouse */
     color: #fff;
+    transform: scale(1.05); /* Leve aumento ao interagir */
+}
+
+.pizzaInfo--addButton:hover {
+    background-color: #218838;
+}
+
+/* Configurações específicas para tablets (768px até 1024px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .pizzaWindowBody {
+        max-width: 700px; /* Ajusta largura para tablets */
+        max-height: 85vh; /* Ajusta altura para tablets */
+        flex-direction: row; /* Layout horizontal para tablets */
+        gap: 15px; /* Espaçamento entre imagem e informações */
+    }
+
+    .pizzaBig {
+        flex: 1; /* A imagem ocupa metade do modal */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .pizzaBig img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .pizzaInfo {
+        flex: 1; /* Informações ocupam o restante */
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .pizzaInfo h1 {
+        font-size: 1.8rem;
+    }
+
+    .pizzaInfo p {
+        font-size: 0.9rem;
+    }
+
+    .pizzaInfo--addButton {
+        font-size: 1.1rem;
+        padding: 12px;
+        width: 100%;
+        align-self: flex-end; /* Alinha o botão ao final */
+    }
+}
+
+/* Configurações específicas para desktops (acima de 1024px) */
+@media (min-width: 1024px) {
+    .pizzaWindowBody {
+        max-width: 900px; /* Modal maior para desktops */
+        max-height: 80vh; /* Altura ajustada */
+        flex-direction: row; /* Layout horizontal para desktops */
+        gap: 20px; /* Espaçamento entre imagem e informações */
+    }
+
+    .pizzaBig {
+        flex: 1; /* A imagem ocupa metade do modal */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .pizzaBig img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .pizzaInfo {
+        flex: 1; /* Informações ocupam o restante */
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Distribui o conteúdo */
+        gap: 15px;
+    }
+
+    .pizzaInfo h1 {
+        font-size: 2rem;
+    }
+
+    .pizzaInfo p {
+        font-size: 1rem;
+    }
+
+    .pizzaInfo--addButton {
+        font-size: 1.2rem;
+        padding: 15px;
+        width: 100%;
+        align-self: flex-end; /* Alinha o botão ao final */
+    }
+}
+
+/* Configurações mantidas para celulares (abaixo de 768px) */
+@media (max-width: 767px) {
+    .pizzaWindowBody {
+        max-width: 90%; /* Ajusta largura para dispositivos menores */
+        max-height: 70vh; /* Garante que o modal fique visível */
+        flex-direction: column; /* Mantém o layout vertical */
+    }
+
+    .pizzaInfo h1 {
+        font-size: 1.4rem;
+    }
+
+    .pizzaInfo p {
+        font-size: 0.8rem;
+    }
+
+    .pizzaInfo--addButton {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
 }

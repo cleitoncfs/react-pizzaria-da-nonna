@@ -3,7 +3,8 @@
     top: 70px;
     right: 0;
     bottom: 0;
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
     background: #fff;
     box-shadow: -4px 0px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -11,22 +12,18 @@
     z-index: 1000;
 }
 
-.menu-closer {
-    font-size: 1.5rem;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-
 .cart h1 {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .cart--item {
     display: flex;
     gap: 10px;
     border-bottom: 1px solid #ddd;
-    padding: 10px 0;
+    padding: 10px 20px 0 50px;
+    align-items: center;
 }
 
 .cart--item img {
@@ -34,12 +31,18 @@
     border-radius: 8px;
 }
 
+.cart--item--qtarea {
+    display: flex;
+    align-items: center;
+}
+
 .cart--item--qtarea button {
     border: none;
-    background: #f1f1f1;
+    background: rgb(241, 241, 241);
     padding: 5px 10px;
     font-size: 1rem;
     cursor: pointer;
+    border-radius: 4px;
 }
 
 .cart--item-remove {
@@ -48,7 +51,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 4px;
     font-size: 0.9rem;
     margin-top: 10px;
     transition: background-color 0.3s ease;
@@ -56,4 +59,40 @@
 
 .cart--item-remove:hover {
     background-color: #c82333;
+}
+
+.cart--total {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 0 30px;
+    font-size: 1.2rem;
+    border-top: 1px solid #ddd;
+}
+
+.cart--empty {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cart {
+        width: 100%;
+        max-width: none;
+        box-shadow: none;
+    }
+
+    .cart--item img {
+        width: 50px;
+    }
+
+    .cart h1 {
+        font-size: 1.3rem;
+    }
+
+    .cart--total {
+        font-size: 1rem;
+    }
 }

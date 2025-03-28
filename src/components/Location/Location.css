@@ -1,0 +1,26 @@
+.location {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.location h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.parallaxBanner {
+    background-image: url("/images/pizzaria-da-nonna.png"); /* Caminho da imagem */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px; /* Altura do banner */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-size: 2rem;
+    font-weight: bold;
+}

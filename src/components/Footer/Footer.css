@@ -5,7 +5,7 @@
     padding: 10px 15px; /* Espaço interno ajustado */
     font-size: 0.9rem;
     margin-top: auto;
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     left: 0;
     width: 100%;
